@@ -346,10 +346,10 @@ export function LandingPage() {
                 Early access
               </p>
               <h2 className="mt-3 font-display text-3xl font-semibold text-white sm:text-4xl">
-                Apply for membership
+                Join the waitlist
               </h2>
               <p className="mt-3 text-muted">
-                Tell us about yourself. Applications are reviewed individually.
+                Be first in line when Plus One launches.
               </p>
             </div>
           </RevealSection>
@@ -362,77 +362,44 @@ export function LandingPage() {
                     <span className="text-2xl text-accent">✓</span>
                   </div>
                   <h3 className="font-display text-2xl font-semibold text-white">
-                    Application received
+                    You&apos;re on the list
                   </h3>
                   <p className="mt-2 text-muted">
-                    We&apos;ll review your application and be in touch soon.
+                    We&apos;ll be in touch when your spot opens up.
                   </p>
-                  <button
-                    type="button"
-                    onClick={() => setSubmitted(false)}
-                    className="mt-6 text-sm text-accent underline-offset-4 hover:underline"
-                  >
-                    Submit another application
-                  </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="grid gap-5 sm:grid-cols-2">
-                    <div>
-                      <label className="mb-1.5 block text-sm text-muted">
-                        First Name
-                      </label>
-                      <input
-                        name="firstName"
-                        required
-                        className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/30"
-                        placeholder="Alex"
-                      />
-                    </div>
-                    <div>
-                      <label className="mb-1.5 block text-sm text-muted">
-                        Age
-                      </label>
-                      <input
-                        name="age"
-                        type="number"
-                        min={18}
-                        max={99}
-                        required
-                        className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/30"
-                        placeholder="24"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid gap-5 sm:grid-cols-2">
-                    <div>
-                      <label className="mb-1.5 block text-sm text-muted">
-                        City
-                      </label>
-                      <input
-                        name="city"
-                        required
-                        className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/30"
-                        placeholder="London"
-                      />
-                    </div>
-                    <div>
-                      <label className="mb-1.5 block text-sm text-muted">
-                        Instagram Username
-                      </label>
-                      <input
-                        name="instagram"
-                        required
-                        className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/30"
-                        placeholder="@yourhandle"
-                      />
-                    </div>
+                  <div>
+                    <label className="mb-1.5 block text-sm text-muted">
+                      Name
+                    </label>
+                    <input
+                      name="name"
+                      required
+                      className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/30"
+                      placeholder="Alex"
+                    />
                   </div>
 
                   <div>
                     <label className="mb-1.5 block text-sm text-muted">
-                      Email Address
+                      Age
+                    </label>
+                    <input
+                      name="age"
+                      type="number"
+                      min={18}
+                      max={99}
+                      required
+                      className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/30"
+                      placeholder="24"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="mb-1.5 block text-sm text-muted">
+                      Email
                     </label>
                     <input
                       name="email"
@@ -443,73 +410,12 @@ export function LandingPage() {
                     />
                   </div>
 
-                  <div>
-                    <label className="mb-2 block text-sm text-muted">
-                      Do you already have a Plus One?
-                    </label>
-                    <div className="flex gap-4">
-                      {["yes", "no"].map((val) => (
-                        <label
-                          key={val}
-                          className="flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm capitalize transition has-[:checked]:border-accent/40 has-[:checked]:bg-accent/10 has-[:checked]:text-white"
-                        >
-                          <input
-                            type="radio"
-                            name="hasPlusOne"
-                            value={val}
-                            required
-                            className="accent-[#d7ff3f]"
-                          />
-                          {val}
-                        </label>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="mb-1.5 block text-sm text-muted">
-                      Relationship Status
-                    </label>
-                    <select
-                      name="relationshipStatus"
-                      required
-                      className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white"
-                      defaultValue=""
-                    >
-                      <option value="" disabled className="bg-surface">
-                        Select
-                      </option>
-                      <option value="single" className="bg-surface">
-                        Single
-                      </option>
-                      <option value="open" className="bg-surface">
-                        Open to dating
-                      </option>
-                      <option value="friends" className="bg-surface">
-                        Just looking for friends
-                      </option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="mb-1.5 block text-sm text-muted">
-                      Why would you be a good addition to Plus One?
-                    </label>
-                    <textarea
-                      name="why"
-                      required
-                      rows={4}
-                      className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-white/30"
-                      placeholder="Tell us a little about yourself and your social life..."
-                    />
-                  </div>
-
                   <button
                     type="submit"
                     disabled={submitting}
                     className="w-full rounded-full bg-accent py-4 text-sm font-semibold text-black transition hover:bg-accent/90 hover:shadow-[0_0_32px_rgba(215,255,63,0.25)] disabled:opacity-60"
                   >
-                    {submitting ? "Submitting..." : "Apply For Access"}
+                    {submitting ? "Submitting..." : "Join Waitlist"}
                   </button>
                   {error ? (
                     <p className="text-center text-sm text-red-400">{error}</p>

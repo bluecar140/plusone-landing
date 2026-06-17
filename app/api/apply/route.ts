@@ -1,14 +1,9 @@
 import { NextResponse } from "next/server";
 
 type ApplicationBody = {
-  firstName?: string;
+  name?: string;
   age?: string;
-  city?: string;
-  instagram?: string;
   email?: string;
-  hasPlusOne?: string;
-  relationshipStatus?: string;
-  why?: string;
 };
 
 function getFormsparkId(): string | undefined {
@@ -31,16 +26,7 @@ function getFormsparkId(): string | undefined {
 export async function POST(request: Request) {
   const body = (await request.json()) as ApplicationBody;
 
-  const required = [
-    "firstName",
-    "age",
-    "city",
-    "instagram",
-    "email",
-    "hasPlusOne",
-    "relationshipStatus",
-    "why",
-  ] as const;
+  const required = ["name", "age", "email"] as const;
 
   for (const field of required) {
     if (!body[field]?.toString().trim()) {
@@ -73,16 +59,11 @@ export async function POST(request: Request) {
       Accept: "application/json",
     },
     body: JSON.stringify({
-      firstName: body.firstName,
+      name: body.name,
       age: body.age,
-      city: body.city,
-      instagram: body.instagram,
       email: body.email,
-      hasPlusOne: body.hasPlusOne,
-      relationshipStatus: body.relationshipStatus,
-      why: body.why,
       _email: {
-        subject: `Plus One application — ${body.firstName} (${body.city})`,
+        subject: `Plus One waitlist — ${body.name}`,
       },
     }),
   });
@@ -91,7 +72,7 @@ export async function POST(request: Request) {
     const detail = await response.text();
     console.error("Formspark error:", detail);
     return NextResponse.json(
-      { error: "Failed to submit application. Please try again." },
+      { error: "Failed to submit. Please try again." },
       { status: 502 },
     );
   }
