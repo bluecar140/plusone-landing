@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "PLUSONE — Bring a friend. Show up together.",
+  title: "Plus One — Dating is better as a four",
   description:
-    "PLUSONE makes it easy to find plans, invite your plus-one, and get out together.",
+    "Join with your best friend and meet other pairs for real double dates, nights out and social experiences. Apply for early access.",
+  openGraph: {
+    title: "Plus One — Dating is better as a four",
+    description:
+      "Premium social double-dating. Join with your Plus One and meet other pairs.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -19,8 +19,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} h-full antialiased`}>
-      <body className="min-h-full font-sans">{children}</body>
+    <html lang="en" className="h-full antialiased">
+      <head>
+        <link
+          href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@400,500,700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="min-h-full bg-background text-foreground">{children}</body>
     </html>
   );
 }
