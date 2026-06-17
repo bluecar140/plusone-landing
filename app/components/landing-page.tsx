@@ -444,16 +444,17 @@ export function LandingPage() {
 
       {/* App showcase */}
       <section className="px-6 py-12">
-        <div className="mx-auto flex max-w-4xl justify-center gap-4 overflow-x-auto pb-4">
+        <div className="mx-auto flex max-w-5xl justify-center gap-6 overflow-x-auto pb-4">
           {[
-            { src: "/screenshots/chat.png", alt: "Chat" },
-            { src: "/screenshots/profile.png", alt: "Profile" },
+            { src: "/screenshots/discover.png", alt: "Discover" },
+            { src: "/screenshots/tonight.png", alt: "Tonight" },
+            { src: "/screenshots/matches.png", alt: "Matches" },
           ].map((screen) => (
             <PhoneMockup
               key={screen.alt}
               src={screen.src}
               alt={`Plus One ${screen.alt} screen`}
-              className="shrink-0 scale-90 opacity-80"
+              className="shrink-0 scale-90 opacity-90"
             />
           ))}
         </div>
