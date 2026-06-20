@@ -22,10 +22,10 @@ const sections = [
         <p className="mt-4">
           For privacy enquiries, contact us at{" "}
           <a
-            href="mailto:privacy@plusoneapp.org"
+            href="mailto:hazcottlimited@gmail.com"
             className="text-accent hover:underline"
           >
-            privacy@plusoneapp.org
+            hazcottlimited@gmail.com
           </a>
           .
         </p>
@@ -129,10 +129,10 @@ const sections = [
         <p className="mt-4">
           To exercise these rights, email{" "}
           <a
-            href="mailto:privacy@plusoneapp.org"
+            href="mailto:hazcottlimited@gmail.com"
             className="text-accent hover:underline"
           >
-            privacy@plusoneapp.org
+            hazcottlimited@gmail.com
           </a>
           .
         </p>
