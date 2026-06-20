@@ -484,7 +484,7 @@ export function LandingPage() {
             Plus One
           </p>
           <nav className="flex flex-wrap justify-center gap-6 text-sm text-muted">
-            <a href="#" className="transition hover:text-white">
+            <a href="/privacy" className="transition hover:text-white">
               Privacy Policy
             </a>
             <a href="#" className="transition hover:text-white">
